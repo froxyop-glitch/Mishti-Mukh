@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<title>Mishti Mukh | Authentic Bengali Sweets</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="container nav">
+
+        <div class="logo">
+            <img src="images/favicon.png" alt="Mishti Mukh Logo">
+            মিষ্টি মুখ 
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#">Home</a>
+            <a href="#products">Sweets</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <div class="cart-wrapper">
+            <a href="checkout.html" class="cart-link">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-subtitle">
+            Traditional Bengali Sweets
+        </div>
+
+        <h1>
+            Welcome to
+            <span>Mishti Mukh</span>
+        </h1>
+
+        <p>
+            Experience the authentic taste of Bengal with
+            handcrafted Rasgulla, Sandesh, Cham Cham and
+            other traditional sweets made fresh every day.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#products" class="hero-btn">
+                Order Now
+            </a>
+
+            <a href="#about" class="hero-btn-outline">
+                Learn More
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products" class="products">
+
+    <div class="container product-container">
+
+        <div class="section-title">
+            <h2>Our Best Sellers</h2>
+            <p>Freshly prepared every day</p>
+        </div>
+
+        <!--Product filter-->
+                <div class="product-filters">
+
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search sweets...">
+            </div>
+
+            <div class="price-filter">
+
+                <label>Max Price:</label>
+
+                <input
+                    type="range"
+                    id="priceRange"
+                    min="100"
+                    max="500"
+                    value="500">
+
+                <span id="priceValue">₹500</span>
+
+            </div>
+
+        </div>
+     <div class="product-grid" id="productGrid">
+
+    <!-- Visible Products -->
+
+    <div class="product-card" data-price="250">
+        <div class="product-image">
+            <img src="images/rosgulla.png" alt="Rasgulla">
+        </div>
+
+        <div class="product-content">
+            <h3>Rasgulla</h3>
+            <p>Soft, juicy and delicious Bengali Rasgulla.</p>
+            <div class="price">₹250/kg</div>
+
+            <div class="product-buttons">
+                <button onclick="addToCart('Rasgulla',250)">
+                    Add To Cart
+                </button>
+
+                <a href="singlepage.html?name=Rasgulla&price=250&image=images/rosgulla.png"
+                   class="view-btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-price="320">
+        <div class="product-image">
+            <img src="images/sandesh.png" alt="Sandesh">
+        </div>
+
+        <div class="product-content">
+            <h3>Sandesh</h3>
+            <p>Authentic Bengali Sandesh made from fresh chhena.</p>
+            <div class="price">₹320/kg</div>
+
+            <div class="product-buttons">
+                <button onclick="addToCart('Sandesh',320)">
+                    Add To Cart
+                </button>
+
+                <a href="singlepage.html?name=Sandesh&price=320&image=images/sandesh.png"
+                   class="view-btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card" data-price="300">
+        <div class="product-image">
+            <img src="images/cham-cham.png" alt="Cham Cham">
+        </div>
+
+        <div class="product-content">
+            <h3>Cham Cham</h3>
+            <p>Traditional Cham Cham prepared with love.</p>
+            <div class="price">₹300/kg</div>
+
+            <div class="product-buttons">
+                <button onclick="addToCart('Cham Cham',300)">
+                    Add To Cart
+                </button>
+
+                <a href="singlepage.html?name=Cham%20Cham&price=300&image=images/cham-cham.png"
+                   class="view-btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Products -->
+
+    <div class="product-card hidden-product" data-price="360">
+        <div class="product-image">
+            <img src="images/kheer-kadam.png" alt="Kheer Kadam">
+        </div>
+
+        <div class="product-content">
+            <h3>Kheer Kadam</h3>
+            <p>Soft rasgulla wrapped with rich khoya.</p>
+            <div class="price">₹360/kg</div>
+
+            <div class="product-buttons">
+                <button onclick="addToCart('Kheer Kadam',360)">
+                    Add To Cart
+                </button>
+
+                <a href="singlepage.html?name=kheer-kadam&price=360&image=images/kheer-kadam.png"
+                   class="view-btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card hidden-product" data-price="180">
+        <div class="product-image">
+            <img src="images/mishti-doi.png" alt="Mishti Doi">
+        </div>
+
+        <div class="product-content">
+            <h3>Mishti Doi</h3>
+            <p>Traditional Bengali sweet yogurt.</p>
+            <div class="price">₹180/kg</div>
+
+            <div class="product-buttons">
+                <button onclick="addToCart('Mishti Doi',180)">
+                    Add To Cart
+                </button>
+
+               <a href="singlepage.html?name=mishti-doi&price=180&image=images/mishti-doi.png"
+                   class="view-btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-card hidden-product" data-price="400">
+        <div class="product-image">
+            <img src="images/rajbhog.png" alt="Rajbhog">
+        </div>
+
+        <div class="product-content">
+            <h3>Rajbhog</h3>
+            <p>Premium saffron-flavoured Bengali sweet.</p>
+            <div class="price">₹400/kg</div>
+
+            <div class="product-buttons">
+                <button onclick="addToCart('Rajbhog',400)">
+                    Add To Cart
+                </button>
+
+                 <a href="singlepage.html?name=rajbhog&price=400&image=images/rajbhog.png"
+                   class="view-btn">
+                    View Details
+                </a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="load-more-wrapper">
+    <button id="loadMoreBtn" class="load-more-btn">
+        Load More Products
+    </button>
+</div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="features">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Why Choose Mishti Mukh?</h2>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-cookie-bite"></i>
+
+                <h3>Fresh Ingredients</h3>
+
+                <p>
+                    Made fresh every day using
+                    premium quality ingredients.
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <h3>Fast Delivery</h3>
+
+                <p>
+                    Quick doorstep delivery
+                    across your city.
+                </p>
+
+            </div>
+
+            <div class="feature-box">
+
+                <i class="fa-solid fa-award"></i>
+
+                <h3>Premium Quality</h3>
+
+                <p>
+                    Traditional recipes passed
+                    down through generations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section class="testimonials">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Customer Reviews</h2>
+        </div>
+
+        <div class="feature-grid">
+
+            <div class="testimonial-card">
+                <p>
+                    "Best Rasgulla I've ever had.
+                    Truly authentic!"
+                </p>
+                <strong>- Rahul Sharma</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    "Amazing quality and quick
+                    delivery."
+                </p>
+                <strong>- Priya Das</strong>
+            </div>
+
+            <div class="testimonial-card">
+                <p>
+                    "Our family loves their
+                    Sandesh and Cham Cham."
+                </p>
+                <strong>- Arjun Roy</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="checkout">
+
+    <div class="container">
+
+        <div class="checkout-card">
+
+            <h2>Contact Us</h2>
+
+            <form>
+
+                <input
+                type="text"
+                placeholder="Your Name">
+
+                <input
+                type="email"
+                placeholder="Email Address">
+
+                <textarea
+                rows="5"
+                placeholder="Your Message"></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Contact Section Ends Here -->
+<div class="city-heading"> <h2>Alipurduar</h2> </div>
+<section class="city-sketch"></section>
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-alpona"></div>
+
+    <div class="container footer-grid">
+
+        <div>
+            <h2 class="footer-logo">মিষ্টি মুখ</h2>
+
+            <p>
+                Bringing the authentic taste of Bengal
+                to your doorstep with handcrafted sweets
+                prepared using traditional recipes.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="footer-title">Quick Links</h3>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#products">Sweets</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="footer-title">Contact</h3>
+
+            <div class="footer-contact">
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Alipurduar, West Bengal
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 9876543210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@mishtimukh.com
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Mishti Mukh • Crafted with Tradition & Sweetness
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    const icon = menuToggle.querySelector("i");
+
+    if(navLinks.classList.contains("active")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    }else{
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+});
+</script>
+<script>
+const loadMoreBtn =document.getElementById("loadMoreBtn");
+
+loadMoreBtn.addEventListener("click", () => {
+
+    const hiddenProducts =
+    document.querySelectorAll(".hidden-product");
+
+    hiddenProducts.forEach(product => {
+        product.style.display = "block";
+    });
+
+    loadMoreBtn.style.display = "none";
+});
+</script>
+<script>
+
+const searchInput =
+document.getElementById("searchInput");
+
+const priceRange =
+document.getElementById("priceRange");
+
+const priceValue =
+document.getElementById("priceValue");
+
+const products =
+document.querySelectorAll(".product-card");
+
+function filterProducts(){
+
+    const searchText =
+    searchInput.value.toLowerCase();
+
+    const maxPrice =
+    Number(priceRange.value);
+
+    products.forEach(product => {
+
+        const name =
+        product.querySelector("h3")
+        .textContent
+        .toLowerCase();
+
+        const price =
+        Number(product.dataset.price);
+
+        const matchName =
+        name.includes(searchText);
+
+        const matchPrice =
+        price <= maxPrice;
+
+        if(matchName && matchPrice){
+
+            product.style.display = "block";
+
+        }else{
+
+            product.style.display = "none";
+        }
+
+    });
+
+}
+
+searchInput.addEventListener(
+    "keyup",
+    filterProducts
+);
+
+priceRange.addEventListener(
+    "input",
+    () => {
+
+        priceValue.textContent =
+        "₹" + priceRange.value;
+
+        filterProducts();
+    }
+);
+
+</script>
+</body>
+</html>

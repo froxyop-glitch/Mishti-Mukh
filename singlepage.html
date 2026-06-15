@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<title>Mishti Mukh | View Product</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+
+        <div class="logo">
+            <img src="images/favicon.png" alt="Mishti Mukh Logo">
+            মিষ্টি মুখ
+        </div>
+  <!-- Hamburger Menu -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="#products">Sweets</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <div class="cart-wrapper">
+            <a href="checkout.html" class="cart-link">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+        </div>
+
+    </div>
+</header>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="hero-subtitle">
+            Traditional Bengali Sweets
+        </div>
+
+        <h1>
+            Our Products
+            <span>Mishti Mukh</span>
+        </h1>
+    </div>
+
+</section>
+<section class="product-page">
+
+    <div class="container">
+
+        <div class="product-wrapper">
+
+            <!-- Product Image -->
+            <div class="product-image zoom-container">
+                <span class="zoom-text">Hover to Zoom</span>
+                <img id="productImage" src="" alt="Product">
+            </div>
+            
+            <!-- Product Details -->
+            <div class="product-details">
+
+                <div class="product-tag">
+                    Authentic Bengali Sweet
+                      <h2 id="productName"></h2>
+                </div>
+                
+
+                <div class="price">
+                    ₹<span id="productPrice"></span>/kg 
+                </div>
+
+                <p class="description">
+                    Soft, spongy and juicy Rasgullas prepared
+                    using fresh chhena and traditional Bengali
+                    techniques. Perfect for celebrations,
+                    gifting and family occasions.
+                </p>
+
+                <div class="product-meta">
+
+                    <div>
+                        <i class="fa-solid fa-weight-scale"></i>
+                        1 KG Pack
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        Fresh Daily
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-truck"></i>
+                        Fast Delivery
+                    </div>
+
+                </div>
+
+                <div class="quantity-box">
+
+                    <label>Quantity</label>
+
+                    <input
+                    type="number"
+                    id="qty"
+                    value="1"
+                    min="1">
+
+                </div>
+
+                <div class="product-buttons">
+
+                    <button
+                    class="add-cart-btn"
+                    onclick="addToCart()">
+
+                        <i class="fa-solid fa-cart-plus"></i>
+                        Add To Cart
+
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+</section>
+<!-- Contact Section Ends Here -->
+<div class="city-heading"> <h2>Alipurduar</h2> </div>
+<section class="city-sketch"></section>
+<footer class="footer">
+
+    <div class="footer-alpona"></div>
+
+    <div class="container footer-grid">
+
+        <div>
+            <h2 class="footer-logo">মিষ্টি মুখ</h2>
+
+            <p>
+                Bringing the authentic taste of Bengal
+                to your doorstep with handcrafted sweets
+                prepared using traditional recipes.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="footer-title">Quick Links</h3>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#products">Sweets</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="footer-title">Contact</h3>
+
+            <div class="footer-contact">
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Alipurduar, West Bengal
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 9876543210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@mishtimukh.com
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Mishti Mukh • Crafted with Tradition & Sweetness
+    </div>
+
+</footer>
+
+<script>
+
+let cart =JSON.parse(localStorage.getItem("mishtiCart")) || [];
+const params =new URLSearchParams(window.location.search);
+
+const name =params.get("name");
+
+const price =params.get("price");
+
+const image =params.get("image");
+
+document.getElementById("productName").textContent =name;
+
+document.getElementById("productPrice").textContent =price;
+
+document.getElementById("productImage").src =image;
+
+function updateCartCount(){
+
+    const count =
+    document.getElementById("cart-count");
+
+    if(count){
+        count.textContent = cart.length;
+    }
+}
+
+function addToCart(){
+
+    const qty =
+    parseInt(document.getElementById("qty").value);
+
+    for(let i=0;i<qty;i++){
+
+        cart.push({
+            name:"Rasgulla",
+            price:299
+        });
+
+    }
+
+    localStorage.setItem(
+        "mishtiCart",
+        JSON.stringify(cart)
+    );
+
+    updateCartCount();
+
+    alert("Added to cart successfully!");
+}
+
+updateCartCount();
+
+</script>
+<script>
+
+const zoomContainer=document.querySelector(".zoom-container");
+
+const zoomImage =document.getElementById("productImage");
+
+zoomContainer.addEventListener("mousemove", (e)=>{
+
+    const rect =
+    zoomContainer.getBoundingClientRect();
+
+    const x =
+    ((e.clientX - rect.left) / rect.width) * 100;
+
+    const y =
+    ((e.clientY - rect.top) / rect.height) * 100;
+
+    zoomImage.style.transformOrigin =
+    `${x}% ${y}%`;
+
+    zoomImage.style.transform =
+    "scale(2)";
+});
+
+zoomContainer.addEventListener("mouseleave", ()=>{
+
+    zoomImage.style.transform =
+    "scale(1)";
+
+    zoomImage.style.transformOrigin =
+    "center center";
+});
+
+</script>
+</body>
+</html>
+

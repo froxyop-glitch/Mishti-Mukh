@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<title>Checkout | Mishti Mukh</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="container nav">
+
+        <div class="logo">
+            <img src="images/favicon.png" alt="Mishti Mukh Logo">
+            মিষ্টি মুখ 
+        </div>
+
+        <!-- Hamburger Menu -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="#products">Sweets</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="checkout.html">Checkout</a>
+        </nav>
+
+        <div class="cart-wrapper">
+            <a href="checkout.html" class="cart-link">
+                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                <span id="cart-count" class="cart-count">0</span>
+            </a>
+        </div>
+
+    </div>
+
+</header>
+
+<!-- CHECKOUT -->
+
+<section class="checkout-section">
+
+<section class="checkout-section">
+
+<div class="container">
+
+
+<!-- Progress Bar -->
+
+<div class="checkout-progress">
+
+    <div class="step active">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Cart</span>
+    </div>
+
+    <div class="step active">
+        <i class="fa-solid fa-user"></i>
+        <span>Checkout</span>
+    </div>
+
+    <div class="step">
+        <i class="fa-solid fa-credit-card"></i>
+        <span>Payment</span>
+    </div>
+
+    <div class="step">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>Complete</span>
+    </div>
+
+</div>
+
+<h1 class="checkout-title">
+    Secure Checkout
+</h1>
+
+<p class="checkout-subtitle">
+    Fresh Bengali sweets delivered directly to your doorstep.
+</p>
+
+<div class="checkout-grid">
+
+    <!-- Customer Information -->
+
+    <div class="checkout-card">
+
+        <h2>
+            <i class="fa-solid fa-user"></i>
+            Customer Information
+        </h2>
+
+        <form id="checkoutForm">
+
+            <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required>
+
+            <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            required>
+
+            <input
+            type="tel"
+            id="phone"
+            placeholder="Mobile Number"
+            required>
+
+            <textarea
+            id="address"
+            rows="5"
+            placeholder="Delivery Address"
+            required></textarea>
+
+            <h3>
+                <i class="fa-solid fa-wallet"></i>
+                Payment Method
+            </h3>
+
+            <div class="payment-methods">
+
+                <label class="payment-card">
+
+                    <input
+                    type="radio"
+                    name="payment"
+                    value="online"
+                    checked>
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                    <div>
+                        <strong>Online Payment</strong>
+                        <small>
+                            UPI, Debit Card, Credit Card
+                        </small>
+                    </div>
+
+                </label>
+
+                <label class="payment-card">
+
+                    <input
+                    type="radio"
+                    name="payment"
+                    value="cod">
+
+                    <i class="fa-solid fa-money-bill-wave"></i>
+
+                    <div>
+                        <strong>Cash On Delivery</strong>
+                        <small>
+                            Pay after delivery
+                        </small>
+                    </div>
+
+                </label>
+
+            </div>
+
+            <button
+            type="button"
+            class="place-order-btn"
+            onclick="placeOrder()">
+
+                <i class="fa-solid fa-bag-shopping"></i>
+                Place Order Securely
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Order Summary -->
+
+    <div class="checkout-card order-summary">
+
+        <h2>
+            <i class="fa-solid fa-receipt"></i>
+            Order Summary
+        </h2>
+
+        <div class="delivery-box">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <div>
+                <strong>
+                    Expected Delivery
+                </strong>
+
+                <p id="deliveryDate">
+                    Within 2-3 Days
+                </p>
+            </div>
+
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="coupon-section">
+
+            <input
+            type="text"
+            id="coupon"
+            placeholder="Enter Coupon Code">
+
+            <button
+            type="button"
+            onclick="applyCoupon()">
+                Apply
+            </button>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Subtotal</span>
+
+            <span>
+                ₹<span id="subtotal">0</span>
+            </span>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Delivery Charge</span>
+
+            <span>₹50</span>
+
+        </div>
+
+        <div class="summary-row discount-row">
+
+            <span>Discount</span>
+
+            <span>
+                -₹<span id="discountAmount">0</span>
+            </span>
+
+        </div>
+
+        <hr>
+
+        <div class="grand-total-box">
+
+            <span>Total</span>
+
+            <strong>
+                ₹<span id="grandTotal">0</span>
+            </strong>
+
+        </div>
+
+        <div class="secure-payment">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Secure & Encrypted Payment
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</section>
+</section>
+<!-- Form Section Ends Here -->
+<div class="city-heading"> <h2>Alipurduar</h2> </div>
+<section class="city-sketch"></section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-alpona"></div>
+
+    <div class="container footer-grid">
+
+        <div>
+            <h2 class="footer-logo">মিষ্টি মুখ</h2>
+
+            <p>
+                Bringing the authentic taste of Bengal
+                to your doorstep with handcrafted sweets
+                prepared using traditional recipes.
+            </p>
+        </div>
+
+        <div>
+            <h3 class="footer-title">Quick Links</h3>
+
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#products">Sweets</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <div>
+            <h3 class="footer-title">Contact</h3>
+
+            <div class="footer-contact">
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Alipurduar, West Bengal
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 9876543210
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info@mishtimukh.com
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="social-icons">
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Mishti Mukh • Crafted with Tradition & Sweetness
+    </div>
+
+</footer>
+
+<!-- Razorpay SDK -->
+<script src="checkout.js"></script>
+
+<script src="script.js"></script>
+
+<script>
+const deliveryDate = new Date();
+
+deliveryDate.setDate(
+deliveryDate.getDate() + 0
+);
+
+document.getElementById(
+"deliveryDate"
+).innerText =
+deliveryDate.toDateString();
+
+let discount = 0;
+
+function applyCoupon(){
+
+    const code =
+    document
+    .getElementById("coupon")
+    .value
+    .trim()
+    .toUpperCase();
+
+    if(code === "MISHTI10"){
+
+        discount = 10;
+
+        alert(
+        "10% discount applied successfully!"
+        );
+
+        if(typeof renderCart === "function"){
+            renderCart();
+        }
+
+    }else{
+
+        alert(
+        "Invalid coupon code"
+        );
+
+    }
+
+}
+</script>
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    const icon = menuToggle.querySelector("i");
+
+    if(navLinks.classList.contains("active")){
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    }else{
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+});
+</script>
+</body>
+</html>

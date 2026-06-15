@@ -1,0 +1,2140 @@
+/* =========================
+   MISHTI MUKH PREMIUM CSS
+========================= */
+
+:root{
+    --primary:#8b1e3f;
+    --primary-dark:#6f1631;
+    --secondary:#f4c542;
+    --light:#fffaf2;
+    --white:#ffffff;
+    --dark:#222222;
+    --gray:#666666;
+
+    --shadow:0 8px 25px rgba(0,0,0,0.12);
+    --radius:14px;
+    --transition:all .3s ease;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.6;
+}
+
+img{
+    width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+/* ===================================
+MISHTI MUKH PREMIUM NAVBAR
+=================================== */
+
+/* HEADER */
+
+header{
+position: sticky;
+top: 0;
+z-index: 1000;
+background: rgba(255,255,255,0.96);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+box-shadow: 0 4px 20px rgba(0,0,0,.08);
+border-bottom: 1px solid rgba(212,175,55,.15);
+}
+
+/* NAV CONTAINER */
+
+.nav{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 18px 0;
+position: relative;
+}
+
+/* ===================================
+LOGO
+=================================== */
+
+.logo{
+display: flex;
+align-items: center;
+gap: 10px;
+font-size: 30px;
+font-weight: 700;
+color: var(--primary);
+transition: .3s ease;
+cursor: pointer;
+}
+
+.logo i{
+color: var(--gold);
+font-size: 28px;
+transition: .3s ease;
+}
+
+.logo:hover{
+transform: translateY(-2px);
+}
+
+.logo:hover i{
+transform: rotate(-10deg);
+}
+
+/* ===================================
+NAVIGATION LINKS
+=================================== */
+
+.nav-links{
+display: flex;
+align-items: center;
+gap: 30px;
+}
+
+.nav-links a{
+position: relative;
+color: var(--dark);
+font-weight: 600;
+font-size: 16px;
+padding: 5px 0;
+transition: .3s ease;
+}
+
+.nav-links a::after{
+content: "";
+position: absolute;
+left: 0;
+bottom: -5px;
+width: 0;
+height: 2px;
+border-radius: 10px;
+background: linear-gradient(
+to right,
+var(--primary),
+var(--gold)
+);
+transition: .35s ease;
+}
+
+.nav-links a:hover{
+color: var(--primary);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after{
+width: 100%;
+}
+
+.nav-links a.active{
+color: var(--primary);
+}
+
+/* ===================================
+CART
+=================================== */
+
+.cart-link{
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+text-decoration: none;
+}
+
+.cart-icon{
+font-size: 1.5rem;
+color: var(--primary);
+transition: .3s ease;
+}
+
+.cart-link:hover .cart-icon{
+color: var(--gold);
+transform: scale(1.1);
+}
+
+.cart-count{
+position: absolute;
+top: -8px;
+right: -10px;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: var(--primary);
+color: #fff;
+border: 2px solid var(--gold);
+font-size: 11px;
+font-weight: 700;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* ===================================
+HAMBURGER MENU
+=================================== */
+
+.menu-toggle{
+display: none;
+align-items: center;
+justify-content: center;
+width: 42px;
+height: 42px;
+border-radius: 10px;
+background: rgba(139,30,63,.08);
+color: var(--primary);
+font-size: 22px;
+cursor: pointer;
+transition: .3s ease;
+}
+
+.menu-toggle:hover{
+background: var(--primary);
+color: #fff;
+}
+
+/* ===================================
+TABLET & MOBILE
+=================================== */
+
+@media (max-width:992px){
+
+
+.nav{
+    justify-content: center;
+    min-height: 75px;
+}
+
+/* Hamburger Left */
+
+.menu-toggle{
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Logo Center */
+
+.logo{
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+.logo i{
+    font-size: 24px;
+}
+
+/* Cart Right */
+
+.cart-link{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #8B1E3F,
+        #B63B5C
+    );
+    box-shadow: 0 4px 12px rgba(139,30,63,.25);
+}
+
+.cart-icon{
+    color: #fff;
+    font-size: 18px;
+}
+
+.cart-link:hover .cart-icon{
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.cart-count{
+    top: -4px;
+    right: -4px;
+    background: var(--gold);
+    color: #000;
+    border: 2px solid #fff;
+}
+
+/* Mobile Navigation */
+
+.nav-links{
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    transition: max-height .4s ease;
+    z-index: 999;
+}
+
+.nav-links.active{
+    max-height: 400px;
+    padding: 25px 0;
+}
+
+
+}
+
+/* ===================================
+SMALL MOBILE
+=================================== */
+
+@media (max-width:576px){
+
+
+.nav{
+    padding: 14px 0;
+}
+
+.logo{
+    font-size: 22px;
+}
+
+.logo i{
+    font-size: 22px;
+}
+
+.cart-link{
+    width: 42px;
+    height: 42px;
+}
+
+.cart-icon{
+    font-size: 16px;
+}
+
+.cart-count{
+    width: 18px;
+    height: 18px;
+    font-size: 10px;
+}
+
+
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url('images/hero.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    color:white;
+    padding:40px 20px;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:60px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.hero-btn{
+    display:inline-block;
+    padding:15px 35px;
+    border-radius:50px;
+    background:var(--secondary);
+    color:var(--dark);
+    font-weight:700;
+    transition:var(--transition);
+}
+
+.hero-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn,
+button{
+    border:none;
+    cursor:pointer;
+    background:var(--primary);
+    color:white;
+    padding:14px 28px;
+    border-radius:50px;
+    font-weight:600;
+    transition:var(--transition);
+}
+
+.btn:hover,
+button:hover{
+    background:var(--primary-dark);
+    transform:translateY(-3px);
+}
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:40px;
+    color:var(--primary);
+}
+
+.section-title p{
+    color:var(--gray);
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.product-container{
+    position: relative;
+    padding: 80px 8%;
+    background: #fffaf4;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Alpona Background */
+.product-container{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.product-container::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(255,248,240,0.94),
+            rgba(255,248,240,0.96)
+        ),
+        url("images/alpona.png");
+
+    background-repeat: repeat;
+    background-size: 300px;
+    background-position: center;
+
+    opacity: 1;
+    z-index: -1;
+}
+
+.product-container::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(212,175,55,0.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(139,30,63,0.08),
+            transparent 35%
+        );
+
+    z-index: -1;
+}
+
+.products{
+    padding:80px 0;
+}
+
+.product-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.product-card{
+    background:white;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:var(--transition);
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+}
+
+.product-image{
+    height:250px;
+    overflow:hidden;
+}
+
+.product-image img{
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.product-card:hover img{
+    transform:scale(1.1);
+}
+
+.product-content{
+    padding:20px;
+}
+
+.product-content h3{
+    margin-bottom:10px;
+}
+
+.product-content p{
+    color:var(--gray);
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:22px;
+    color:var(--primary);
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    padding:80px 0;
+    background:white;
+}
+
+.feature-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.feature-box{
+    text-align:center;
+    padding:30px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+.feature-box i{
+    font-size:40px;
+    color:var(--primary);
+    margin-bottom:15px;
+}
+
+/* =========================
+   CART
+========================= */
+
+.cart{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:var(--primary);
+    color:white;
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+}
+
+/* ===================================================
+CHECKOUT SECTION
+=================================================== */
+
+.checkout-section{
+    padding:120px 20px 80px;
+    background:
+        linear-gradient(
+            rgba(255,248,240,.96),
+            rgba(255,248,240,.96)
+        ),
+        url("images/alpona.png");
+
+    background-size:300px;
+    background-repeat:repeat;
+}
+
+/* ===================================================
+TITLE
+=================================================== */
+
+.checkout-title{
+    text-align:center;
+    font-size:clamp(2rem,5vw,3rem);
+    color:#8B1E3F;
+    margin-bottom:12px;
+}
+
+.checkout-subtitle{
+    text-align:center;
+    color:#666;
+    font-size:clamp(.95rem,2vw,1.1rem);
+    margin-bottom:50px;
+}
+
+/* ===================================================
+PROGRESS BAR
+=================================================== */
+
+.checkout-progress{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-bottom:50px;
+}
+
+.step{
+    text-align:center;
+    color:#999;
+}
+
+.step i{
+    width:60px;
+    height:60px;
+    line-height:60px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    font-size:22px;
+    margin-bottom:10px;
+    display:inline-block;
+}
+
+.step span{
+    display:block;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.step.active{
+    color:#8B1E3F;
+}
+
+.step.active i{
+    background:#8B1E3F;
+    color:#fff;
+}
+
+/* ===================================================
+GRID
+=================================================== */
+
+.checkout-grid{
+    display:grid;
+    grid-template-columns:1.7fr 1fr;
+    gap:35px;
+    align-items:start;
+}
+
+/* ===================================================
+CARD
+=================================================== */
+
+.checkout-card{
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.checkout-card h2,
+.checkout-card h3{
+    color:#8B1E3F;
+    margin-bottom:20px;
+}
+
+/* ===================================================
+FORM
+=================================================== */
+
+.checkout-card input,
+.checkout-card textarea{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.checkout-card textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+.checkout-card input:focus,
+.checkout-card textarea:focus{
+    outline:none;
+    border-color:#D4AF37;
+    box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
+
+/* ===================================================
+PAYMENT
+=================================================== */
+
+.payment-methods{
+    margin-top:20px;
+}
+
+.payment-card{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:18px;
+    margin-bottom:15px;
+    border:2px solid #eee;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.payment-card:hover{
+    border-color:#D4AF37;
+    transform:translateY(-3px);
+}
+
+.payment-card input{
+    width:auto;
+    margin:0;
+}
+
+.payment-card i{
+    font-size:24px;
+    color:#8B1E3F;
+}
+
+/* ===================================================
+DELIVERY
+=================================================== */
+
+.delivery-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    background:#FFF8F0;
+    border-left:5px solid #D4AF37;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:25px;
+}
+
+.delivery-box i{
+    font-size:30px;
+    color:#8B1E3F;
+}
+
+/* ===================================================
+CART
+=================================================== */
+
+#cartItems{
+    margin-bottom:20px;
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 0;
+    border-bottom:1px solid #eee;
+}
+
+.cart-item-name{
+    font-weight:600;
+}
+
+.cart-item-price{
+    color:#8B1E3F;
+    font-weight:700;
+}
+
+/* ===================================================
+COUPON
+=================================================== */
+
+.coupon-section{
+    display:flex;
+    gap:10px;
+    margin:25px 0;
+}
+
+.coupon-section input{
+    flex:1;
+    margin-bottom:0;
+}
+
+.coupon-section button{
+    border:none;
+    background:#8B1E3F;
+    color:#fff;
+    padding:0 20px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.coupon-section button:hover{
+    background:#D4AF37;
+}
+
+/* ===================================================
+SUMMARY
+=================================================== */
+
+.summary-row{
+    display:flex;
+    justify-content:space-between;
+    margin:14px 0;
+}
+
+.discount-row{
+    color:#28a745;
+}
+
+.grand-total-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
+    margin-top:20px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#8B1E3F,#B22245);
+    color:#fff;
+}
+
+.grand-total-box strong{
+    font-size:1.5rem;
+}
+
+/* ===================================================
+SECURE PAYMENT
+=================================================== */
+
+.secure-payment{
+    text-align:center;
+    color:#28a745;
+    margin-top:20px;
+    font-weight:600;
+}
+
+/* ===================================================
+BUTTON
+=================================================== */
+
+.place-order-btn{
+    width:100%;
+    padding:16px;
+    margin-top:20px;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#8B1E3F,#D4AF37);
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.place-order-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(139,30,63,.25);
+}
+
+/* ===================================================
+STICKY SUMMARY
+=================================================== */
+
+.order-summary{
+    position:sticky;
+    top:100px;
+    height:fit-content;
+}
+
+/* ===================================================
+LARGE TABLETS
+=================================================== */
+
+@media (max-width:1024px){
+
+.checkout-grid{
+    grid-template-columns:1fr;
+}
+
+.order-summary{
+    position:static;
+}
+
+}
+
+/* ===================================================
+TABLETS
+=================================================== */
+
+@media (max-width:768px){
+
+.checkout-section{
+    padding:100px 15px 60px;
+}
+
+.checkout-card{
+    padding:22px;
+}
+
+.checkout-progress{
+    gap:18px;
+}
+
+.step i{
+    width:52px;
+    height:52px;
+    line-height:52px;
+    font-size:18px;
+}
+
+.coupon-section{
+    flex-direction:column;
+}
+
+.coupon-section button{
+    width:100%;
+    height:50px;
+}
+
+}
+
+/* ===================================================
+MOBILE
+=================================================== */
+
+@media (max-width:576px){
+
+.checkout-title{
+    font-size:2rem;
+}
+
+.checkout-card{
+    padding:18px;
+}
+
+.delivery-box{
+    flex-direction:column;
+    text-align:center;
+}
+
+.payment-card{
+    flex-direction:column;
+    align-items:flex-start;
+}
+
+.cart-item{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:5px;
+}
+
+.summary-row,
+.grand-total-box{
+    font-size:14px;
+}
+
+.grand-total-box strong{
+    font-size:1.3rem;
+}
+
+}
+
+/* ===================================================
+SMALL MOBILE
+=================================================== */
+
+@media (max-width:360px){
+
+.checkout-title{
+    font-size:1.7rem;
+}
+
+.checkout-card{
+    padding:15px;
+}
+
+.step i{
+    width:45px;
+    height:45px;
+    line-height:45px;
+    font-size:16px;
+}
+
+.place-order-btn{
+    font-size:15px;
+}
+
+}
+/* =========================
+   TESTIMONIALS
+========================= */
+
+.testimonials{
+    padding:80px 0;
+}
+
+.testimonial-card{
+    background:white;
+    padding:30px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    position: relative;
+    margin: 0;
+    padding: 60px 0 20px;
+    background: linear-gradient(180deg, #b6b2aa 0%, #bb6a8c 40%, #8B1E3F 100%);
+}
+
+/* Top Transition */
+
+
+/* Golden Glow */
+.footer::after{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:50%;
+
+    width:min(800px,90vw);
+    height:250px;
+
+    transform:translateX(-50%);
+
+    background:
+    radial-gradient(
+        ellipse,
+        rgba(241, 240, 237, 0.25),
+        transparent 70%
+    );
+    
+    pointer-events:none;
+}
+
+/* Alpona Watermark */
+.footer-alpona{
+    position:absolute;
+    inset:0;
+    background:url("images/alpona.png")center center repeat;
+
+    background-size:220px;
+
+    opacity:.05;
+
+    pointer-events:none;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.footer-grid{
+    position:relative;
+    z-index:2;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:40px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.footer-logo{
+    font-size:clamp(2rem,4vw,3rem);
+
+    color:#FFD76A;
+
+    margin-bottom:15px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+}
+
+.footer-grid p{
+    line-height:1.8;
+    color:#f6e9d2;
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.footer-title{
+    color:#FFD76A;
+
+    font-size:1.25rem;
+
+    margin-bottom:20px;
+
+    position:relative;
+}
+
+.footer-title::after{
+    content:"";
+
+    display:block;
+
+    width:60px;
+    height:3px;
+
+    margin-top:8px;
+
+    border-radius:50px;
+
+    background:#FFD76A;
+}
+
+/* =========================
+   LINKS
+========================= */
+
+.footer-links a{
+    display:block;
+
+    margin-bottom:12px;
+
+    color:#f5f5f5;
+
+    transition:.3s ease;
+}
+
+.footer-links a:hover{
+    color:#FFD76A;
+
+    transform:translateX(8px);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.footer-contact p{
+    display:flex;
+    align-items:flex-start;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+    color:#f2e8d9;
+}
+
+.footer-contact i{
+    color:#FFD76A;
+    min-width:18px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social-icons{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:50px;
+}
+
+.social-icons a{
+    width:52px;
+    height:52px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:#FFD76A;
+
+    border:1px solid rgba(255,215,106,.4);
+
+    background:linear-gradient(180deg, #f8ead8 0%, #652c0aab 12%, #8B1E3F 45%, #5c0f26 100%);
+
+    backdrop-filter:blur(6px);
+
+    transition:.35s ease;
+}
+
+.social-icons a:hover{
+    transform:
+    translateY(-5px)
+    scale(1.08);
+
+    background:#FFD76A;
+
+    color:#8B1E3F;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.footer-bottom{
+    position:relative;
+    z-index:2;
+
+    text-align:center;
+
+    margin-top:50px;
+
+    padding-top:25px;
+
+    border-top:
+    1px solid rgba(255,255,255,.15);
+
+    color:#f4e7d0;
+
+    font-size:.95rem;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:991px){
+
+    .footer{
+        padding:100px 0 25px;
+    }
+
+    .footer-grid{
+        gap:35px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+    .footer{
+        text-align:center;
+        padding:90px 0 20px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    .footer-title::after{
+        margin:10px auto 0;
+    }
+
+    .footer-contact p{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .social-icons{
+        margin-top:35px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    .footer{
+        padding: 64px 16px 20px;
+    }
+
+    .footer-logo{
+        font-size:2rem;
+    }
+
+    .social-icons a{
+        width:46px;
+        height:46px;
+        font-size:15px;
+    }
+
+    .footer-bottom{
+        font-size:.85rem;
+        line-height:1.6;
+    }
+
+}
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.loader::before{
+    content:"";
+    width:60px;
+    height:60px;
+    border:6px solid #eee;
+    border-top-color:var(--primary);
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .hero h1{
+        font-size:48px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero{
+        min-height:70vh;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .checkout-card{
+        padding:25px;
+    }
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:30px;
+    }
+
+    .section-title h2{
+        font-size:28px;
+    }
+
+    .btn,
+    button{
+        width:100%;
+    }
+}
+
+/**checkout--css--**/
+
+.checkout-section{
+    padding:80px 0;
+}
+
+.checkout-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:30px;
+}
+
+.checkout-card{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.checkout-card h2{
+    margin-bottom:20px;
+}
+
+.checkout-card input,
+.checkout-card textarea{
+    width:100%;
+    margin-bottom:15px;
+}
+
+.cart-row{
+    display:flex;
+    justify-content:space-between;
+    padding:12px 0;
+    border-bottom:1px solid #eee;
+}
+
+.payment-methods{
+    display:flex;
+    gap:20px;
+    margin:20px 0;
+}
+
+.checkout-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+@media(max-width:768px){
+
+    .checkout-grid{
+        grid-template-columns:1fr;
+    }
+}
+/**checkout-css**/
+
+
+/** decorative hero section
+/* =========================
+   HERO SECTION - BENGALI PREMIUM
+========================= */
+
+.hero{
+    position:relative;
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgb(235 228 227 / 75%), rgb(139 30 63));
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:#fff;
+}
+
+/* Alpona Overlay */
+
+.hero::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:
+    url("images/alpona.png")center center repeat;
+
+    background-size:280px;
+
+    opacity:.12;
+
+    pointer-events:none;
+}
+
+/* Golden Glow */
+
+.hero::after{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at center,
+        rgba(244,197,66,.18),
+        transparent 60%
+    );
+
+    pointer-events:none;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+
+    padding:20px;
+}
+
+.hero-subtitle{
+    color:#c1910a;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+    text-transform:uppercase;
+
+    margin-bottom:15px;
+
+    font-weight:600;
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    margin-bottom:25px;
+
+    font-weight:800;
+
+    text-shadow:
+    0 4px 20px rgba(0,0,0,.35);
+}
+
+.hero h1 span{
+    color:#f4c542;
+}
+
+.hero p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    font-size:22px;
+
+    color:#f7f7f7;
+
+    margin-bottom:35px;
+
+    line-height:1.8;
+}
+
+/* Buttons */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    background:#f4c542;
+
+    color:#222;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.hero-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 10px 25px rgba(244,197,66,.4);
+}
+
+.hero-btn-outline{
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    border:2px solid #fff;
+
+    color:#fff;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.hero-btn-outline:hover{
+
+    background:#fff;
+
+    color:#8b1e3f;
+}
+
+/* Decorative Corners */
+
+.hero-corner-top,
+.hero-corner-bottom{
+
+    position:absolute;
+
+    width:220px;
+
+    opacity:.18;
+
+    z-index:1;
+}
+
+.hero-corner-top{
+    top:0;
+    left:0;
+}
+
+.hero-corner-bottom{
+    bottom:0;
+    right:0;
+    transform:rotate(180deg);
+}
+/** Decorative hero section**/
+
+
+/** Decorative footer
+
+/* ==========================================
+COLOR PENCIL SKETCH SECTION
+========================================== */
+
+.city-sketch{
+    width:100%;
+    height:450px;
+    position:relative;
+    background-image:
+    linear-gradient(
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.05)
+    ),
+    url("images/footer-banner.png");
+
+    background-size:cover;
+    background-position:center center;
+    background-repeat:no-repeat;
+
+    margin-top:0;
+}
+.city-sketch::after{
+    content:"";
+
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:120px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(230, 228, 227, 0),
+        #fffffe
+    );
+}
+/* Tablet */
+@media(max-width:992px){
+
+    .city-sketch{
+        height:350px;
+        background-position:center;
+    }
+
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .city-sketch{
+        height:250px;
+        background-size:cover;
+        background-position:center center;
+    }
+
+}
+
+/* Small Mobile */
+@media(max-width:480px){
+
+    .city-sketch{
+        height:180px;
+    }
+
+}
+.city-sketch{
+    width:100%;
+    height:450px;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #FFF8F0 0%,
+        rgba(255,248,240,.2) 15%,
+        rgba(255,248,240,0) 30%
+    ),
+    url("images/footer-banner.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+
+/* ========= ALIPURDUAR HEADING ==============*/
+.city-heading{ text-align:center; background:#FFF8F0; padding:30px 20px 15px; } 
+.city-heading h2{ font-family:"Courier New", Courier, monospace; font-style:italic; 
+font-size:clamp(2rem,5vw,4rem); font-weight:700; 
+color:#8B1E3F; letter-spacing:3px; text-transform:uppercase; 
+margin:0; } 
+/* Decorative Line */ 
+.city-heading h2::after{ content:""; display:block; width:120px; height:3px; 
+    margin:15px auto 0; background:#D4AF37; border-radius:50px; 
+} /* Mobile */ 
+@media(max-width:768px){ 
+    .city-heading{ padding:20px 15px 10px; } 
+    .city-heading h2{ letter-spacing:2px; } 
+    .city-heading h2::after{ width:80px; } 
+}
+
+
+
+/**Footer section**/
+/**Single product page**/
+.product-page{
+    padding:120px 0 80px;
+    background:#FFF8F0;
+}
+
+.product-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.product-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.product-tag{
+    display:inline-block;
+    background:#D4AF37;
+    color:#fff;
+    padding:8px 15px;
+    border-radius:50px;
+    margin-bottom:15px;
+}
+
+.product-details h1{
+    color:#8B1E3F;
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.price{
+    font-size:2rem;
+    color:#8B1E3F;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.price span{
+    font-size:1rem;
+    color:#999;
+    text-decoration:line-through;
+    margin-left:10px;
+}
+
+.description{
+    line-height:1.8;
+    color:#555;
+    margin-bottom:25px;
+}
+
+.product-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.product-meta div{
+    background:#fff;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+.quantity-box{
+    margin-bottom:25px;
+}
+
+.quantity-box input{
+    width:120px;
+    padding:12px;
+    margin-top:10px;
+}
+
+.product-buttons{
+    display:flex;
+    gap:15px;
+}
+
+.add-cart-btn,
+.buy-btn{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.add-cart-btn{
+    background:#8B1E3F;
+    color:#fff;
+}
+
+.buy-btn{
+    background:#D4AF37;
+    color:#fff;
+}
+
+@media(max-width:768px){
+
+    .product-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .product-details h1{
+        font-size:2rem;
+    }
+
+    .product-buttons{
+        flex-direction:column;
+    }
+}
+.product-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:15px;
+}
+
+.product-buttons button,
+.view-btn{
+    flex:1;
+    text-align:center;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    text-decoration:none;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.product-buttons button{
+    background:#8B1E3F;
+    color:#fff;
+}
+
+.view-btn{
+    background:#D4AF37;
+    color:#fff;
+}
+/** Single product page**/
+
+/** Load more button css**/
+.hidden-product{
+    display:none;
+}
+
+.load-more-wrapper{
+    text-align:center;
+    margin-top:40px;
+}
+
+.load-more-btn{
+    background:#8B1E3F;
+    color:#fff;
+    border:none;
+    padding:14px 35px;
+    border-radius:50px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.load-more-btn:hover{
+    background:#D4AF37;
+    color:#222;
+    transform:translateY(-3px);
+}
+
+/**Load more button css---**/
+
+/** Logo style for mooo  bangalr m***/
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:1.7rem;
+    font-weight:700;
+    color:#8B1E3F;
+    letter-spacing:.5px;
+}
+
+.logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+
+    border-radius:50%;
+
+    transition:.3s ease;
+}
+
+.logo:hover img{
+    transform:rotate(8deg) scale(1.05);
+}
+
+.logo span{
+    color:#8B1E3F;
+    font-family:inherit;
+}
+/** Logo style for mooo  bangalr m***/
+
+/** Product filter css**/
+.product-filters{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+
+    margin:40px 0;
+    padding:20px;
+
+    background:#fff;
+    border-radius:15px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+}
+
+.search-box{
+    flex:1;
+    min-width:250px;
+    position:relative;
+}
+
+.search-box i{
+    position:absolute;
+    left:15px;
+    top:50%;
+    transform:translateY(-50%);
+    color:#8B1E3F;
+}
+
+.search-box input{
+    width:100%;
+    padding:14px 14px 14px 45px;
+
+    border:2px solid #eee;
+    border-radius:50px;
+
+    font-size:15px;
+}
+
+.search-box input:focus{
+    outline:none;
+    border-color:#D4AF37;
+}
+
+.price-filter{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.price-filter label{
+    font-weight:600;
+    color:#8B1E3F;
+}
+
+.price-filter input[type="range"]{
+    width:180px;
+}
+
+#priceValue{
+    font-weight:700;
+    color:#8B1E3F;
+}
+
+@media(max-width:768px){
+
+    .product-filters{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .price-filter{
+        justify-content:center;
+    }
+}
+/** Product filter css**/
+/** Product Magnifier**/
+.zoom-container{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:20px;
+    cursor:zoom-in;
+
+    background:#fff;
+}
+
+.zoom-container img{
+    width:100%;
+    display:block;
+
+    transform-origin:center center;
+    transition:transform .15s ease;
+}
+.zoom-text{
+    position:absolute;
+    top:15px;
+    right:15px;
+
+    background:#8B1E3F;
+    color:#fff;
+
+    padding:8px 14px;
+    border-radius:30px;
+
+    font-size:13px;
+    z-index:5;
+}
+/** Product Magnifier**/
